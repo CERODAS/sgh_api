@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "e88c6d3a-e2f4-411c-887c-9835a11821f0",
+		"name": "Pruebas_API_SGH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38963386"
+	},
+	"item": [
+		{
+			"name": "departamento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Estado de respuesta es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sgh/departamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sgh",
+						"departamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DepaInserrt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Estado de respuesta es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombre\": \"Pediatria\",\r\n   \"usuario_creador\": 1,\r\n   \"fecha_creacion\": \"2024-09-24T22:38:58\",\r\n   \"usuario_modificacion\": 1,\r\n   \"fecha_modificacion\": \"2024-09-24T22:38:58\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sgh/departamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sgh",
+						"departamento"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

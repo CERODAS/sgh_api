@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mariadb:latest
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: sgh_propia
+      MYSQL_USER: estuardo
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  springboot-app:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://db:3306/sgh_propia
+      SPRING_DATASOURCE_USERNAME: estuardo
+      SPRING_DATASOURCE_PASSWORD: 1234 
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update 
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - app-network
+
+volumes:
+  mariadb_data:
+  jenkins_home:
+
+networks:
+  app-network:
+    driver: bridge
