@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = "cerodasv/sgh_api:V1.0"  // Reemplaza con tu usuario y nombre de imagen
+        DOCKER_IMAGE = "cerodasv/sgh_api-springboot-app:V1.0"  // Reemplaza con tu usuario y nombre de imagen
         POSTMAN_COLLECTION = "tests/postman/Pruebas_API_SGH.postman_collection.json"  // Ruta a la colección
     }
 
