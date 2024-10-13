@@ -37,9 +37,9 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'  // Autentica en Docker Hub
-                }
+                withCredentials([string(credentialsId: 'jenk-cred', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u cerodasv -p ${dockerhubpwd}'
+                  }
                 script {
                     docker.image("${DOCKER_IMAGE}").push()  // Empuja la imagen a Docker Hub
                 }
