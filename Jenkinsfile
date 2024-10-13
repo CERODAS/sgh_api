@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         maven 'maven-default'
-        dockerTool 'docker-default'  // Aquí el nombre que le diste a Docker en Jenkins
+        dockerTool 'docker-default'  // Asegúrate de que el nombre aquí coincida con tu configuración
     }
 
     environment {
@@ -19,11 +19,11 @@ pipeline {
         }
 
         stage('Build') {
-            agent {
-                docker { image 'maven:3.8.1-jdk-17' }  // Utiliza la imagen de Maven para construir
-            }
             steps {
-                sh 'mvn clean package'  // Construye el proyecto
+                script {
+                    // Usa Maven desde la herramienta instalada en Jenkins
+                    sh 'mvn clean package'  // Construye el proyecto
+                }
             }
         }
 
