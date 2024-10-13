@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/CERODAS/sgh_api.git'  // Reemplaza con la URL de tu repositorio
+                git branch: 'dev', url: 'https://github.com/CERODAS/sgh_api.git'  // Reemplaza con la URL de tu repositorio
             }
         }
 
