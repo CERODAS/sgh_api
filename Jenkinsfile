@@ -1,5 +1,10 @@
 pipeline {
     agent any  // Utiliza el agente predeterminado de Jenkins
+    
+    tools {
+        maven 'maven-default'
+        dockerTool docker-default'  // Aquí el nombre que le diste a Docker en Jenkins
+    }
 
     environment {
         DOCKER_IMAGE = "cerodasv/sgh_api:V1.0"  // Reemplaza con tu usuario y nombre de imagen
