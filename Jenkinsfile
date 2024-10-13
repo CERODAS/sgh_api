@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         maven 'maven-default'
-        dockerTool docker-default'  // Aquí el nombre que le diste a Docker en Jenkins
+        dockerTool 'docker-default'  // Aquí el nombre que le diste a Docker en Jenkins
     }
 
     environment {
