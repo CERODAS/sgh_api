@@ -21,7 +21,7 @@ import com.sgh.sgh.Dao.IDaoCita;
 import com.sgh.sgh.Entity.Cita;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("*")
 @RequestMapping(value = ("/sgh"))
 public class CitaController {
 
