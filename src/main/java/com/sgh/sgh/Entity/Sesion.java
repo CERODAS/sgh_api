@@ -17,7 +17,7 @@ public class Sesion {
     @Temporal(TemporalType.TIMESTAMP)
     public Date login_time;
 
-    @Column(name = "logout_time", nullable = false)
+    @Column(name = "logout_time", nullable = true)
     @Temporal(TemporalType.TIMESTAMP)
     public Date logout_time;
 

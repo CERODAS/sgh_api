@@ -19,10 +19,10 @@ public class Permiso {
 	@Column(name = "id")
 	public int id;
 	public String disponible;
-	public String rol_id;
+	public int rol_id;
 	public int modulo_id;
 	public int usuario_creador;
-	public String fecha_creacion;
-	public Date usuario_modificacion;
+	public Date fecha_creacion;
+	public int usuario_modificacion;
 	public Date fecha_modificacion;
 }

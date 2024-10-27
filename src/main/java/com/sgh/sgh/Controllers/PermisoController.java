@@ -15,7 +15,7 @@ import com.sgh.sgh.Entity.Permiso;
 
 @RestController
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("*")
 @RequestMapping(value = ("/sgh"))
 public class PermisoController {
 	
